@@ -11,10 +11,15 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 public class Bot {
     public static void main(String[] args) {
+
+            try {
+        H.start();
+    } catch (IOException e) {
+        e.printStackTrace(); // or log it
+    }
+        
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-
-                    H.start();
 
             // Register your actual bot class (Place), not Bot
             botsApi.registerBot(new Place());
