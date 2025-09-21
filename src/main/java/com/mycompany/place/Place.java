@@ -37,7 +37,7 @@ public class Place extends TelegramLongPollingBot {
             }
         }
     }
-    
+    }
     private void deleteMessage(Message msg) {
         DeleteMessage delete = new DeleteMessage();
         delete.setChatId(msg.getChatId().toString());
