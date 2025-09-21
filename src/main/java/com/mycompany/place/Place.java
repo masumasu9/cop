@@ -10,8 +10,17 @@ public class Place extends TelegramLongPollingBot {
     
     @Override
     public void onUpdateReceived(Update update) {
+      
+
         if (update.hasMessage()) {
-            Message msg = update.getMessage();
+    Long chatId = update.getMessage().getChatId();
+
+    // Only work in these groups
+    if (chatId.equals(-1002800500560L) || //coop 
+        chatId.equals(-1002717991742L) || //test
+        chatId.equals(-1002970524076L)) { //main
+
+        Message msg = update.getMessage();
             
             // Log all messages for debugging
             System.out.println("📨 Message received in chat: " + msg.getChatId());
