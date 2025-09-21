@@ -28,5 +28,19 @@ public class Bot {
         } catch (InterruptedException e) {
             System.out.println("Bot stopped.");
         }
+
+            int port = 8080;
+        if (System.getenv("PORT") != null) {
+            port = Integer.parseInt(System.getenv("PORT"));
+        }
+        port(port);
+
+        get("/health", (req, res) -> {
+            res.type("text/plain");
+            return "OK";
+        });
+
+        System.out.println("Health endpoint running on /health");
+        
     }
 }
