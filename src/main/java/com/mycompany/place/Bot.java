@@ -5,6 +5,8 @@
 package com.mycompany.place;
 import static spark.Spark.*;
 
+import java.io.IOException;
+
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
