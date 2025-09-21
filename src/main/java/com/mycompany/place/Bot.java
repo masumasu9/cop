@@ -14,7 +14,7 @@ public class Bot {
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
 
-                    HealthServer.start();
+                    H.start();
 
             // Register your actual bot class (Place), not Bot
             botsApi.registerBot(new Place());
