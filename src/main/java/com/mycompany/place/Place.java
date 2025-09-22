@@ -78,7 +78,6 @@ public class Place extends TelegramLongPollingBot {
             System.err.println("Go to @BotFather and get a new token!");
         }
         
-        return token;
     }
     
     private boolean isValidTokenFormat(String token) {
