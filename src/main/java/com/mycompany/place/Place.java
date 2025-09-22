@@ -67,16 +67,16 @@ public class Place extends TelegramLongPollingBot {
     
     @Override
     public String getBotToken() {
-        // STEP 1: Replace this with your REAL token from BotFather
-        return BOT_TOKEN;
-        
-        // STEP 2: Basic token validation
-        if (!isValidTokenFormat(token)) {
-            System.err.println("❌ INVALID TOKEN FORMAT!");
-            System.err.println("Expected format: 1234567890:ABCdefGhIjKlMnOpQrStUvWxYz1234567890");
-            System.err.println("Your token: " + token);
-            System.err.println("Go to @BotFather and get a new token!");
-        }
+
+        // STEP 1: Use the environment variable BOT_TOKEN
+    if (!isValidTokenFormat(BOT_TOKEN)) {
+        System.err.println("❌ INVALID TOKEN FORMAT!");
+        System.err.println("Expected format: 1234567890:ABCdefGhIjKlMnOpQrStUvWxYz1234567890");
+        System.err.println("Your token: " + BOT_TOKEN);
+        System.err.println("Go to @BotFather and get a new token!");
+    }
+
+    return BOT_TOKEN;
         
     }
     
