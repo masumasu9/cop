@@ -7,6 +7,9 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class Place extends TelegramLongPollingBot {
+
+    private final String BOT_TOKEN = System.getenv("BOT_TOKEN");
+    private final String BOT_USERNAME = System.getenv("BOT_USERNAME");
     
     @Override
     public void onUpdateReceived(Update update) {
@@ -58,13 +61,14 @@ public class Place extends TelegramLongPollingBot {
     @Override
     public String getBotUsername() {
         // Replace with your bot's actual username (without @)
-        return "makkuronafukunookyakusan_bot";
+                return BOT_USERNAME;
+
     }
     
     @Override
     public String getBotToken() {
         // STEP 1: Replace this with your REAL token from BotFather
-        String token = "7948637431:AAHZpSUHDufdYIZVMsbYk8XQbz5femMIBck";
+        return BOT_TOKEN;
         
         // STEP 2: Basic token validation
         if (!isValidTokenFormat(token)) {
